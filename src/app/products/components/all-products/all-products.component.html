@@ -1,0 +1,29 @@
+<!-- <p>all-products works!</p> -->
+<div class="container-fluid mt-5">
+    <div class="my-2 w-25">
+        <label for="" class="my-1">Categories:</label>
+        <select class="form-control" (change)="filterCategory($event)">
+            <option value="all" selected>All</option>
+            <option value="{{option}}" *ngFor="let option of categories">{{option}}</option>
+            <!-- <option value="2">opt2</option>
+            <option value="3">opt3</option>
+            <option value="4">opt4</option> -->
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-3" *ngFor="let item of products">
+            <div class="item m-5">
+                <div class="card p-3" style="width: 18rem; height: 25rem;">
+                    <img class="card-img-top" src="{{item.image}}" alt="Card image cap" height="200px">
+                    <div class="card-body">
+                      <h5 class="card-title" >{{item.title}}</h5>
+                      <p class="card-text">${{item.price}}</p>
+                      <a href="#" class="btn btn-primary w-100">View Details</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
