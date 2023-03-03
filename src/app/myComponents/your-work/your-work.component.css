@@ -1,0 +1,21 @@
+h1 {
+  font-weight: 500;
+}
+
+.recent {
+  background-color: #fafbfc;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.card {
+  border-left: 20px solid #c8a8f2;
+}
+
+.card:hover {
+  box-shadow: 1px 1px 1px 1px rgb(208, 204, 204);
+}
+
+.card-footer {
+  background-color: white;
+}

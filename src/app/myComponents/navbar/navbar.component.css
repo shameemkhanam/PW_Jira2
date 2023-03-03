@@ -1,0 +1,37 @@
+.logo {
+  position: relative;
+  top: -2px;
+}
+
+/* .dropdown-menu li:hover {
+  background-color: black;
+} */
+
+.has-search .form-control {
+  padding-left: 2rem;
+  width: 12rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  /* padding-left: 5px; */
+  z-index: 2;
+  /* display: block; */
+  width: 1.2rem;
+  height: 2.3rem;
+  line-height: 1.8rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+.bellDiv .bell {
+  width: 1.2rem;
+  height: 1.3rem;
+}
+.nav-link:hover{
+  border-radius: 4px;
+  color: blue !important;
+  background-color: rgba(171, 186, 245, 0.444);
+  /* border-bottom: 2px; */
+}

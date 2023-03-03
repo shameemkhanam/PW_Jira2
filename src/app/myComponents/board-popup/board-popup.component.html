@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Create issue</h2>
+<form [formGroup]="todoForm" class="p-2" (ngSubmit)="saveTodo()">
+  <mat-form-field appearance="outline">
+    <mat-label>Task</mat-label>
+    <input matInput placeholder="todo" formControlName="description">
+  </mat-form-field>
+  <div mat-dialog-actions [align]="'end'">
+    <button class="me-2 mb-3" mat-raised-button color="accent" mat-dialog-close (click)="closeTodoPopup()">Cancel</button>
+    <button class="me-4 mb-3" mat-raised-button color="primary">Save</button>
+  </div>
+</form>

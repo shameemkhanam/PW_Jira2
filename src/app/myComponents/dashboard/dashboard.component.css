@@ -1,0 +1,17 @@
+h1{
+  font-weight:200;
+}
+.card {
+  border-top: 5px solid #3762ff;
+}
+
+img{
+  margin-left: 100px;
+}
+.projects{
+  border-top: 5px solid #00b9dc;
+}
+.projectlist{
+  height: 60px;
+  background-color: rgb(240, 238, 238);
+}

@@ -1,0 +1,40 @@
+<div class="container-fluid p-4">
+  <h1>Your Work</h1>
+</div>
+
+<div class="recent container-fluid ">
+  <div class="d-flex justify-content-between">
+    <h4>Recent Projects</h4>
+    <a routerLink="/projects"><h4>view all projects</h4></a>
+  </div>
+  <div class="row">
+    <div class="col-md-2" *ngFor="let i of projectList">
+      <div class="card " routerLink="/projects/project">
+        <div class="card-body">
+          <h4 class="card-title fw-bold">{{i.projectName}}</h4>
+          <h5 class="text-muted fw-bold">QUICK LINKS</h5>
+          <p class="card-text">{{i.summary}}</p>
+        </div>
+        <div class="card-footer">
+          <a class="nav-link dropdown-toggle text-dark p-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            board
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">board</a></li>            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="recent-cards">
+    <div class="card text-center">
+      <div class="card-header">Featured</div>
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Button</a>
+      </div>
+      <div class="card-footer text-muted">2 days ago</div>
+    </div>
+  </div> -->
+</div>

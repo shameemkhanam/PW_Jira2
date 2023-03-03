@@ -1,0 +1,66 @@
+<h2 mat-dialog-title>Create Project</h2>
+<div mat-dialog-content class="mt-2">
+  <form [formGroup]="projectDialogForm">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Project Name</mat-label>
+          <input matInput placeholder="project name" formControlName="projectName">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Key</mat-label>
+          <input matInput placeholder="project name" formControlName="key">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Type</mat-label>
+        <mat-select placeholder="type" formControlName="type">
+          <mat-option value="team managed">Team Managed Project</mat-option>
+          <mat-option value="company managed">Company Managed Project</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    
+    
+    <!-- <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Task</mat-label>
+        <input matInput placeholder="task" formControlName="task">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>In Progress</mat-label>
+        <input matInput placeholder="in progress" formControlName="inProgress">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Done</mat-label>
+        <input matInput placeholder="done" formControlName="done">
+      </mat-form-field>
+    </div> -->
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Summary</mat-label>
+        <textarea matInput formControlName="summary"></textarea>
+      </mat-form-field>
+    </div>
+    
+  </form>
+
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button class="me-2 mb-3" mat-raised-button color="accent" mat-dialog-close>Cancel</button>
+  <button class="me-4 mb-3" mat-raised-button color="primary" (click)="onDialogFormSubmit()">{{data? 'Update' :
+    'Save'}}</button>
+</div>

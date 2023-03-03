@@ -1,0 +1,120 @@
+<nav class="sb-topnav navbar navbar-expand navbar-light bg-light shadow-sm">
+  <!-- Navbar Brand-->
+  <a class="navbar-brand ps-3" routerLink="your-work"><img class="logo" src="../../../assets/img/download.jpeg"
+      width="20px">
+    Jira
+    Software</a>
+  <!-- Sidebar Toggle-->
+  <!-- <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+      class="fas fa-bars"></i></button> -->
+
+  <!-- added -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Your work
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-info" routerLink="your-work">Go to your work page</a></li>
+
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Projects
+        </a>
+        <ul class="dropdown-menu">
+          <!-- <li><a class="dropdown-item text-info" >View project</a></li> -->
+          <li><a class="dropdown-item text-info" routerLink="projects">View all projects</a></li>
+          <li><a class="dropdown-item text-info" (click)="openDialog()">Create project</a></li>
+
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Filters
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Dashboards
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-info" routerLink="dashboard">Default dashboard</a></li>
+
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          People
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          App
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="btn btn-sm btn-primary ms-4">Create</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Navbar Search-->
+  <div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback ps-2"></span>
+    <input type="text" class="form-control" placeholder="Search">
+  </div>
+  <!-- <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+    <div class="input-group">
+      <i class="fas fa-search"></i>
+      <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
+        aria-describedby="btnNavbarSearch" />
+       <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button> -->
+  <!-- </div>
+  </form>  -->
+  <div class="bellDiv">
+    <a href="#"><span class="fa fa-bell text-secondary bell ps-2"></span></a>
+  </div>
+  <div class="bellDiv">
+    <a href="#"><span class="fa-solid fa-circle-question bell text-secondary ps-3"></span></a>
+  </div>
+  <div class="bellDiv">
+    <a href="#"><span class="fa fa-gear bell text-secondary px-3"></span></a>
+  </div>
+  <!-- Navbar-->
+  <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+        aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="#!">Settings</a></li>
+        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li><a class="dropdown-item" href="#!">Logout</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>

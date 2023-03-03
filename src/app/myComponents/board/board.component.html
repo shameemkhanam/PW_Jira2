@@ -1,0 +1,160 @@
+<div class="container-fluid p-4">
+  <!-- breadcrumb -->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/projects">Projects</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Board</li>
+    </ol>
+  </nav>
+
+  <h2>Project Board</h2>
+
+  <div class="row">
+    <div class="col-md-2">
+      <div class="form-group has-search">
+        <span class="fa fa-search form-control-feedback ps-2"></span>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+  </div>
+
+  <!-- cards todos -->
+  <div cdkDropListGroup>
+    <div class="row mt-1">
+      <!-- todo -->
+      <div class="col-md-3 me-2 rounded px-1 py-3" style="background-color: #f4f5f7">
+        <small class="text-muted fw-bold ps-3">TODO (0)</small>
+        <div class="cardDiv" *ngFor="let todo of todoData">
+          <mat-card (click)="editTodo(todo.id)" class="example-card pb-2 mx-auto mt-4 w-100" cdkDrag>
+            <mat-card-header>
+              <div class="row">
+                <div class="col-md-9">
+
+                  <mat-card-content>{{todo.description}}</mat-card-content>
+                </div>
+                <div class="col-md-3">
+                  <div style="margin-left:100px; border-radius: 5px;">
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                      <mat-icon>more_horiz</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" xPosition="before">
+                      <button mat-menu-item disabled>
+                        <span>ACTIONS</span>
+                      </button>
+                      
+                      <button mat-menu-item>
+                        <span>Delete</span>
+                      </button>
+                    </mat-menu>
+                  </div>
+                </div>
+              </div>
+            </mat-card-header>
+          </mat-card>
+        </div>
+
+        <div class="w-100 mt-1 p-1">
+          <button (click)="openPopup('')" class="btn createDiv w-100 text-start"><i class="fa-solid fa-plus"></i> Create
+            issue</button>
+        </div>
+      </div>
+
+      <!-- in progress -->
+      <div class="col-md-3 me-2 rounded px-1 py-3" style="background-color: #f4f5f7">
+        <small class="text-muted fw-bold ps-3">IN PROGRESS (0)</small>
+
+        <mat-card class="example-card pb-2 mx-auto mt-4 w-100" cdkDrag>
+          <mat-card-header>
+            <div class="row">
+              <div class="col-md-9">
+                <div>
+                  <mat-card-content>todo</mat-card-content>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div style="margin-left:100px; border-radius: 5px;">
+                  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_horiz</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu" xPosition="before">
+                    <button mat-menu-item disabled>
+                      <span>ACTIONS</span>
+                    </button>
+                    <button mat-menu-item>
+                      <span>Update</span>
+                    </button>
+                    <button mat-menu-item>
+                      <span>Delete</span>
+                    </button>
+
+                  </mat-menu>
+
+                </div>
+              </div>
+
+            </div>
+
+          </mat-card-header>
+
+        </mat-card>
+
+        <div class="w-100 mt-1 p-1">
+          <button class="btn createDiv w-100 text-start"><i class="fa-solid fa-plus"></i> Create
+            issue</button>
+        </div>
+      </div>
+
+      <!--done-->
+      <div class="col-md-3 me-2 rounded px-1 py-3" style="background-color: #f4f5f7">
+        <small class="text-muted fw-bold ps-3">DONE (0) <i class="ms-3 text-success fa-solid fa-check"></i></small>
+
+        <mat-card class="example-card pb-2 mx-auto mt-4 w-100" cdkDrag>
+          <mat-card-header>
+            <div class="row">
+              <div class="col-md-9">
+                <div>
+                  <mat-card-content>todo</mat-card-content>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div style="margin-left:100px; border-radius: 5px;">
+                  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_horiz</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu" xPosition="before">
+                    <button mat-menu-item disabled>
+                      <span>ACTIONS</span>
+                    </button>
+                    <button mat-menu-item>
+                      <span>Update</span>
+                    </button>
+                    <button mat-menu-item>
+                      <span>Delete</span>
+                    </button>
+
+                  </mat-menu>
+
+                </div>
+              </div>
+
+            </div>
+
+          </mat-card-header>
+
+        </mat-card>
+
+        <div class="w-100 mt-1 p-1">
+          <button class="btn createDiv w-100 text-start"><i class="fa-solid fa-plus"></i> Create
+            issue</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  <!-- todos end-->
+
+</div>
