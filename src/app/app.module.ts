@@ -32,6 +32,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BoardPopupComponent } from './myComponents/board-popup/board-popup.component';
+import { InProgressPopupComponent } from './myComponents/in-progress-popup/in-progress-popup.component';
+import { DonePopupComponent } from './myComponents/done-popup/done-popup.component';
+import { LoginComponent } from './myComponents/login/login.component';
+import { SignupComponent } from './myComponents/signup/signup.component';
 
 
 
@@ -48,7 +52,11 @@ import { BoardPopupComponent } from './myComponents/board-popup/board-popup.comp
     SingleProjectComponent,
     BoardComponent,
     ProjectDialogComponent,
-    BoardPopupComponent
+    BoardPopupComponent,
+    InProgressPopupComponent,
+    DonePopupComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

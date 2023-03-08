@@ -14,3 +14,11 @@ export interface todo {
   description: string;
   // done: boolean;
 }
+
+export interface signup{
+  fullname: string;
+  mobile: number;
+  email: string;
+  password: string;
+  cpassword: string;
+}

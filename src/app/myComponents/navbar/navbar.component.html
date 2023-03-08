@@ -29,7 +29,7 @@
         <ul class="dropdown-menu">
           <!-- <li><a class="dropdown-item text-info" >View project</a></li> -->
           <li><a class="dropdown-item text-info" routerLink="projects">View all projects</a></li>
-          <li><a class="dropdown-item text-info" (click)="openDialog()">Create project</a></li>
+          <li><a class="dropdown-item text-info" (click)="openDialog()" style="cursor:pointer;">Create project</a></li>
 
         </ul>
       </li>
@@ -108,12 +108,12 @@
       <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
         aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="#!">Settings</a></li>
-        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+        <li><a class="dropdown-item" href="#!">Profile</a></li>
+        <!-- <li ><a class="dropdown-item" >Login</a></li> -->
         <li>
           <hr class="dropdown-divider" />
         </li>
-        <li><a class="dropdown-item" href="#!">Logout</a></li>
+        <li><a class="dropdown-item" routerLink="/login">Logout</a></li>
       </ul>
     </li>
   </ul>

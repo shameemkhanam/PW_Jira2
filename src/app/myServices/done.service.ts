@@ -6,12 +6,12 @@ import { todo } from '../model/datatypes';
 @Injectable({
   providedIn: 'root'
 })
-export class TaskService {
+export class DoneService {
 
   baseUrl: string;
 
   constructor(private http: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/tasks';
+    this.baseUrl = 'http://localhost:3000/done';
   }
 
   addTask(data: any) {

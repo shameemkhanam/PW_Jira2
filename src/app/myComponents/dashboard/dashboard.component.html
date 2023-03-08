@@ -8,15 +8,17 @@
           <p class="fw-bold" style="font-size: 24px;">Welcome to Jira</p>
           <img src="../../../assets/img/def_dash.png" alt="">
         </div>
-      </div>      
+      </div>
     </div>
   </div>
   <div class="container-fluid mt-3">
     <div class="card projects shadow-sm">
       <div class="card-body">
         <h4 class="card-title fw-bold" style="color:#5e00ff">Projects</h4>
-        <div class="container-fluid projectlist">
-          <h4>project name</h4>
+        <div class="container-fluid projectlist mt-2" *ngFor="let proj of projectList">
+          <div style="cursor:pointer;" routerLink="/projects/{{proj.id}}">
+            <h4 class="text-primary p-2">{{proj.projectName}}</h4>
+          </div>
         </div>
       </div>
     </div>

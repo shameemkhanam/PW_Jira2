@@ -1,5 +1,5 @@
 <h2 mat-dialog-title>Create issue</h2>
-<form [formGroup]="todoForm" class="p-2" (ngSubmit)="saveTodo()">
+<form [formGroup]="inProgressTodoForm" class="p-2" (ngSubmit)="saveTodo()">
   <mat-form-field appearance="outline">
     <mat-label>Task</mat-label>
     <input matInput placeholder="what needs to be done?" formControlName="description">

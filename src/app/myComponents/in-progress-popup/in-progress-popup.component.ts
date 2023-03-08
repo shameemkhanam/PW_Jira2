@@ -2,49 +2,48 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { todo } from 'src/app/model/datatypes';
-import { TaskService } from 'src/app/myServices/task.service';
 import * as alertify from 'alertifyjs';
-
+import { InProgressService } from 'src/app/myServices/in-progress.service';
 
 @Component({
-  selector: 'app-board-popup',
-  templateUrl: './board-popup.component.html',
-  styleUrls: ['./board-popup.component.css']
+  selector: 'app-in-progress-popup',
+  templateUrl: './in-progress-popup.component.html',
+  styleUrls: ['./in-progress-popup.component.css']
 })
-export class BoardPopupComponent implements OnInit {
+export class InProgressPopupComponent implements OnInit {
 
-  editData: todo;
+  editDataInProgress: todo;
 
   constructor(private _fb: FormBuilder,
-    private taskService: TaskService,
+    private inProgressService: InProgressService,
     private todoDialog: MatDialog, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
     if (this.data) {
-      this.taskService.getTaskById(this.data.id).subscribe((res) => {
-        this.editData = res;
+      this.inProgressService.getTaskById(this.data.id).subscribe((res) => {
+        this.editDataInProgress = res;
         // this.todoForm.setValue({id:this.editData.id,description: this.editData.description});
-        this.todoForm.patchValue(res);
+        this.inProgressTodoForm.patchValue(res);
       });
     }
   }
 
-  todoForm = this._fb.group({
+  inProgressTodoForm = this._fb.group({
     description: ['', Validators.required]
   });
 
   saveTodo() {
-    if (this.todoForm.valid) {
+    if (this.inProgressTodoForm.valid) {
       // console.log(this.todoForm.value);
 
       if (this.data.id) {
-        this.taskService.updateTask(this.data.id, this.todoForm.getRawValue()).subscribe((res) => {
+        this.inProgressService.updateTask(this.data.id, this.inProgressTodoForm.getRawValue()).subscribe((res) => {
           this.closeTodoPopup();
           alertify.success('task updated successfully!');
         });
       }
       else {
-        this.taskService.addTask(this.todoForm.value).subscribe((res) => {
+        this.inProgressService.addTask(this.inProgressTodoForm.value).subscribe((res) => {
           this.closeTodoPopup();
           alertify.success('task saved successfully!');
         });
@@ -56,5 +55,4 @@ export class BoardPopupComponent implements OnInit {
   closeTodoPopup() {
     this.todoDialog.closeAll();
   }
-
 }

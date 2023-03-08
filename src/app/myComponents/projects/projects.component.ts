@@ -7,6 +7,7 @@ import { project } from 'src/app/model/datatypes';
 import { MatDialog } from '@angular/material/dialog';
 import { ProjectDialogComponent } from '../project-dialog/project-dialog.component';
 import { CoreService } from 'src/app/myServices/core.service';
+import * as alertify from 'alertifyjs';
 
 @Component({
   selector: 'app-projects',
@@ -57,13 +58,22 @@ export class ProjectsComponent implements OnInit {
   }
 
   deleteProject(id: number) {
-    if (confirm('Are you sure to delete the project?')) {
+
+    alertify.confirm("Delete Project", "Are you sure to delete the project?", () => {
       this.projectService.deleteProject(id).subscribe((res) => {
-        // alert('project deleted successfully..');
-        this._coreService.openSnackBar('project deleted successfully!');
         this.getProjectList();
       });
-    }
+      this._coreService.openSnackBar('project deleted successfully!');
+
+    }, () => { });
+    
+    // if (confirm('Are you sure to delete the project?')) {
+    //   this.projectService.deleteProject(id).subscribe((res) => {
+    //     // alert('project deleted successfully..');
+    //     this._coreService.openSnackBar('project deleted successfully!');
+    //     this.getProjectList();
+    //   });
+    // }
 
   }
 

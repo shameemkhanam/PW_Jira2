@@ -1,36 +1,89 @@
 {
   "projects": [
     {
-      "projectName": "new",
-      "key": "11",
+      "projectName": "todo project",
+      "key": "p1",
       "type": "team managed",
-      "summary": "ssss",
+      "summary": "the description of the project",
       "id": 1
     },
     {
-      "projectName": "new project",
-      "key": "new2",
+      "projectName": "project2",
+      "key": "p2",
       "type": "team managed",
-      "summary": "suadfsdlkf",
+      "summary": "description of p2",
       "id": 2
+    },
+    {
+      "projectName": "Project3",
+      "key": "p3",
+      "type": "team managed",
+      "summary": "the description",
+      "id": 3
     }
   ],
   "tasks": [
     {
-      "description": "todo133",
+      "description": "rererewe",
+      "id": 5
+    },
+    {
+      "description": "ff",
+      "id": 6
+    },
+    {
+      "description": "rrr",
+      "id": 8
+    }
+  ],
+  "inProgress": [
+    {
+      "description": "pro",
       "id": 1
     },
     {
-      "description": "todo2",
+      "description": "eee",
       "id": 2
     },
     {
-      "description": "todo355",
+      "description": "www",
       "id": 3
+    }
+  ],
+  "done": [
+    {
+      "description": "fgdfgdfgdfg",
+      "id": 1
     },
     {
-      "description": "jfsdkjf",
-      "id": 4
+      "description": "fsdfsdf1",
+      "id": 2
+    }
+  ],
+  "signupUsers": [
+    {
+      "fullName": "sana",
+      "mobile": 2323232,
+      "email": "sana@gmail.com",
+      "password": "sa123",
+      "cpassword": "sa123",
+      "id": 1
+    },
+    {
+      "fullName": "shama",
+      "mobile": 43435453433,
+      "email": "shama@user.com",
+      "password": "sha123",
+      "cpassword": "sha123",
+      "id": 2
+    },
+    {
+      "fullName": "aaa33",
+      "mobile": 232323232,
+      "email": "aaa33@ww.com",
+      "password": "aa222",
+      "cpassword": "aa222",
+      "id": 3
     }
   ]
 }
