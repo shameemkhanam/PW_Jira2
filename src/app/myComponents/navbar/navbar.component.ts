@@ -14,20 +14,38 @@ import { ProjectDialogComponent } from '../project-dialog/project-dialog.compone
 })
 export class NavbarComponent implements OnInit {
 
+  menuType: string = 'default';
   username: string;
 
-  constructor(private dialog: MatDialog, private projectService: ProjectService, private router: Router, private authService: AuthService) { }
+  constructor(private dialog: MatDialog, private projectService: ProjectService, private router: Router, private authService: AuthService) {
+
+  }
 
   ngOnInit(): void {
-    // this.router.events.subscribe((val:any) => {
-    //   console.log(val.url);
-    // });
+    this.router.events.subscribe((val: any) => {
+      // console.log(val.url);
+      if (val.url) {
+        if (localStorage.getItem('user')) {
+          // console.warn('in user area');  
+          this.menuType = 'user';
+          let userStore = localStorage.getItem('user');
+          let userData = userStore && JSON.parse(userStore)[0];
+          this.username = userData.fullName;
+        }
+        else {
+          // console.warn('outside user area');
+          this.menuType = 'default';
+        }
+      }
 
-    if (localStorage.getItem('user')) {
-      let userStore = localStorage.getItem('user');
-      let userData = userStore && JSON.parse(userStore)[0];
-      this.username = userData.fullName;
-    }
+    });
+
+    // if (localStorage.getItem('user')) {
+    //   let userStore = localStorage.getItem('user');
+    //   let userData = userStore && JSON.parse(userStore)[0];
+    //   this.username = userData.fullName;
+    // }
+
   }
 
 

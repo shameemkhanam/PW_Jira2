@@ -80,19 +80,15 @@
     </ul>
   </div>
 
+  <div>
+    
+  </div>
   <!-- Navbar Search-->
   <div class="form-group has-search">
     <span class="fa fa-search form-control-feedback ps-2"></span>
     <input type="text" class="form-control" placeholder="Search">
   </div>
-  <!-- <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-    <div class="input-group">
-      <i class="fas fa-search"></i>
-      <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
-        aria-describedby="btnNavbarSearch" />
-       <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button> -->
-  <!-- </div>
-  </form>  -->
+
   <div class="bellDiv">
     <a href="#"><span class="fa fa-bell text-secondary bell ps-2"></span></a>
   </div>
@@ -102,22 +98,42 @@
   <div class="bellDiv">
     <a href="#"><span class="fa fa-gear bell text-secondary px-3"></span></a>
   </div>
-  <div class="d-flex align-items-center justify-content-center mt-2 ms-3 me-2">
+  <!-- <div class="d-flex align-items-center justify-content-center mt-2 ms-3 me-2">
     <p>{{username | titlecase}}</p>
-  </div>
+  </div> -->
   <!-- Navbar-->
-  <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-        aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="#!">Profile</a></li>
-        <!-- <li ><a class="dropdown-item" >Login</a></li> -->
-        <li>
-          <hr class="dropdown-divider" />
-        </li>
-        <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
-      </ul>
-    </li>
-  </ul>
+  <div [ngSwitch]="menuType">
+    <ul *ngSwitchCase="'default'" class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#!">Profile</a></li>
+          <!-- <li ><a class="dropdown-item" >Login</a></li> -->
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li><a class="dropdown-item" routerLink="/login">Login</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul *ngSwitchCase="'user'" class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+      <li class="d-flex align-items-center justify-content-center mt-2 ms-3 me-2">
+        <p>{{username}}</p>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#!">Profile</a></li>
+          <!-- <li ><a class="dropdown-item" >Login</a></li> -->
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
 </nav>
