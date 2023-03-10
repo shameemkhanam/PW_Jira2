@@ -1,13 +1,6 @@
 {
   "projects": [
     {
-      "projectName": "todo project",
-      "key": "p1",
-      "type": "team managed",
-      "summary": "the description of the project",
-      "id": 1
-    },
-    {
       "projectName": "project2",
       "key": "p2",
       "type": "team managed",
@@ -48,6 +41,10 @@
     {
       "description": "www",
       "id": 3
+    },
+    {
+      "description": "fdfd",
+      "id": 4
     }
   ],
   "done": [

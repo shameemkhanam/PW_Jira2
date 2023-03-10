@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/myServices/auth.service';
 
 import { ProjectService } from 'src/app/myServices/project.service';
 import { ProjectDialogComponent } from '../project-dialog/project-dialog.component';
@@ -10,10 +12,25 @@ import { ProjectDialogComponent } from '../project-dialog/project-dialog.compone
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
 
-  constructor(private dialog: MatDialog, private projectService:ProjectService) { }
-  
+  username: string;
+
+  constructor(private dialog: MatDialog, private projectService: ProjectService, private router: Router, private authService: AuthService) { }
+
+  ngOnInit(): void {
+    // this.router.events.subscribe((val:any) => {
+    //   console.log(val.url);
+    // });
+
+    if (localStorage.getItem('user')) {
+      let userStore = localStorage.getItem('user');
+      let userData = userStore && JSON.parse(userStore)[0];
+      this.username = userData.fullName;
+    }
+  }
+
+
   openDialog() {
     const dialogRef = this.dialog.open(ProjectDialogComponent);
 
@@ -26,6 +43,11 @@ export class NavbarComponent {
       }
     });
   }
-  
+
+  logout() {
+    localStorage.removeItem('user');
+    this.router.navigate(['login']);
+  }
+
 
 }

@@ -29,9 +29,14 @@
   width: 1.2rem;
   height: 1.3rem;
 }
-.nav-link:hover{
+
+.nav-link:hover {
   border-radius: 4px;
   color: blue !important;
   background-color: rgba(171, 186, 245, 0.444);
   /* border-bottom: 2px; */
+}
+
+.dropdown-item {
+  cursor: pointer;
 }

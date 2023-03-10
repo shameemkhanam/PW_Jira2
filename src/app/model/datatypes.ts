@@ -22,3 +22,8 @@ export interface signup{
   password: string;
   cpassword: string;
 }
+
+export interface login{
+  email: string;
+  password: string;
+}

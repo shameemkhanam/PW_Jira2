@@ -20,7 +20,7 @@ export class ProjectService {
   //   return this.http.post('http://localhost:3000/projects', data);
   // }
   addProject(data: any) {
-    return this.http.post('http://localhost:3000/projects', data)
+    return this.http.post('http://localhost:3000/projects/', data)
       .pipe(
         (tap(() => {
           this._refresh.next(true);
